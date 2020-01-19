@@ -1,0 +1,38 @@
+<app-main-menu></app-main-menu>
+
+<div class="login-box">
+    <form>
+    <mat-card class="mat-elevation-z8">
+      <h1 style="text-align: center;">RESERVATION</h1>
+      <mat-toolbar class="white-toolbar">
+          <span class="space-main-toolbar"></span>
+          <button mat-button class="icon-main-toolbar" (click)="openAddReservation()"><mat-icon>add_circle_outline</mat-icon> Make New Reservation</button>
+          <button mat-button class="icon-main-toolbar" (click)="reloadPage()"><mat-icon>loop</mat-icon> Refresh</button>
+      </mat-toolbar>
+      <br><br>
+
+      <ul *ngFor="let hero of reservations">
+        <div *ngIf="hero.userId === locObj.Id">
+        <mat-card class="mat-elevation-z8" (click)="openEditReservation()">
+            <mat-grid-list cols="4" rowHeight="40px">
+              <mat-grid-tile><h3>Date:</h3></mat-grid-tile>
+              <mat-grid-tile><h3>Time:</h3></mat-grid-tile>
+              <mat-grid-tile><h3>Table Size:</h3></mat-grid-tile>
+              <mat-grid-tile><h3>Reservation Id:</h3></mat-grid-tile>
+              <mat-grid-tile><h2>{{hero.reservationDate}}</h2></mat-grid-tile>
+              <mat-grid-tile><h1>{{hero.reservationTime}}</h1></mat-grid-tile>
+              <mat-grid-tile><h2>{{hero.tableSize}}</h2></mat-grid-tile>
+              <mat-grid-tile><h2>{{hero.id}}</h2></mat-grid-tile>
+            </mat-grid-list>
+        </mat-card>
+        </div>
+      </ul>
+
+    </mat-card>
+    </form>
+</div>
+
+<body>
+  <div class="background"></div>
+</body>
+

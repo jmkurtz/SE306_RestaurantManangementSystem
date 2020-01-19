@@ -1,0 +1,23 @@
+<form #form="ngForm">
+  <mat-toolbar class="main-toolbar">
+    <span>
+      <input type="image" src="assets/img/logo.jpg" routerLink="/homepage" class="toolbar-icon"/>
+    </span>
+    <p *ngIf="locObj.id != null" style="margin:3%;">Welcome, {{locObj.firstName}}!</p>
+
+    <span class="space-main-toolbar"></span>
+      <button mat-button routerLink="/menu">Menu</button>
+      <button *ngIf="locObj.isAdmin" mat-button routerLink="/inventory">Inventory</button>
+      <button *ngIf="locObj.isAdmin"mat-button routerLink="/reservation">Reserve</button>
+      <div *ngIf="!locObj.isAdmin"><button *ngIf="locObj.id != null"mat-button routerLink="/customer-reservation">Reserve</button></div>
+      <button mat-button routerLink="/contact-us">Contact</button>
+      <button mat-button routerLink="/about">About</button>
+      <button mat-button class="icon-main-toolbar"><mat-icon>room</mat-icon>Locations</button>
+      <button mat-button class="icon-main-toolbar" [matMenuTriggerFor]="menu"><mat-icon>account_circle</mat-icon>Account</button>
+      <mat-menu #menu="matMenu">
+          <button *ngIf="locObj.id === null" mat-menu-item (click)="openLogin()">Log In</button>
+          <button *ngIf="locObj.id != null" mat-menu-item (click)="curlogout()">Log Out</button>
+          <button mat-menu-item (click)="openRegister()">Register</button>
+        </mat-menu>
+  </mat-toolbar>
+</form>

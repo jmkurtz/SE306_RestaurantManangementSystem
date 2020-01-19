@@ -1,0 +1,40 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <h1 mat-dialog-title style="text-align: center;">REGISTER</h1>
+    <div mat-dialog-content>
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input name="FirstName" #FirstName="ngModel" [(ngModel)]="service.newUser.firstName" matInput placeholder="Enter First Name">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input name="lastName" #lastName="ngModel" [(ngModel)]="service.newUser.lastName" matInput placeholder="Enter Last Name">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input name="EmailAddress" #EmailAddress="ngModel" [(ngModel)]="service.newUser.emailAddress" matInput placeholder="Enter Email Address">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+
+      <!--This was origionially username but now saves as id-->
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input name="UserName" #UserName="ngModel" [(ngModel)]="service.newUser.id" matInput placeholder="Enter Username">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input name="Password" #Password="ngModel" [(ngModel)]="service.newUser.passWord" matInput type="password" placeholder="Enter Password">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+    </div>
+    <div mat-dialog-action>
+      <button mat-button style="width: 450px" type="submit" fxLayoutAlign="center">SUBMIT</button>
+      <button mat-button style="width: 450px" (click)="openLogin()">LOGIN</button>
+      <button mat-button style="width: 450px" (click)="close()">HOME</button>
+    </div>
+</form>

@@ -1,0 +1,27 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+  }
+  
+.login-container > * {
+    margin-left: 85%;
+    width: 10%;
+}
+
+.login-box {
+    position: absolute;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 3%;
+}
+
+table {
+    width: 90%;
+    margin-left: 5%;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+  }
+  

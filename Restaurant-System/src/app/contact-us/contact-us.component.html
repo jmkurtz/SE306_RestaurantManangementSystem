@@ -1,0 +1,83 @@
+<app-main-menu></app-main-menu>
+
+<div class="form-template">
+  <div class="form-container">
+    <div class="form-long-entries">
+      <h1 class="body-font">
+          At JACKS, we strive to provide you with an unparalleled experience, 
+          and the best way to continue that tradition is to hear from you. To share 
+          your thoughts, please fill out the form below, and a member of our team 
+          will contact you as soon as possible. Thank you.
+      </h1>
+    </div>
+    <br>
+    <div class="form-short-entries">
+
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="First Name" type="text" [formControl]="firstNameControl">
+        <mat-hint>Example: John</mat-hint>
+        <mat-error *ngIf="firstNameControl.hasError('required')">
+            'First Name' is required
+        </mat-error>
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Last Name" type="text" [formControl]="lastNameControl">
+        <mat-hint>Example: Hedman</mat-hint>
+        <mat-error *ngIf="lastNameControl.hasError('required')">
+            'Last Name' is required
+        </mat-error>
+      </mat-form-field>
+      <br><br>
+    </div>
+
+    <div class="form-long-entries">
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Email" [formControl]="emailFormControl">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is required
+        </mat-error>
+        <mat-hint>John.Hedman@example.com</mat-hint>
+      </mat-form-field>
+      <br><br>
+
+      <mat-form-field appearance="outline">
+          <input matInput placeholder="Phone Number" type="text">
+          
+      </mat-form-field>
+      <br><br>
+
+      <mat-form-field appearance="outline">
+          <mat-select placeholder="Reason for Contacting">
+            <mat-option value="option">Comment</mat-option>
+            <mat-option value="option">Question</mat-option>
+            <mat-option value="option">Complaint</mat-option>
+            <mat-option value="option">Request</mat-option>
+            <mat-option value="option">Other</mat-option>
+          </mat-select>
+      </mat-form-field>
+      <br><br>
+
+      <mat-form-field appearance="outline">
+        <textarea matInput #text maxLength="256" placeholder="Comments" [formControl]="commentControl"></textarea>
+        <mat-hint align="end">{{text.value.length}} / 256</mat-hint>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is required
+        </mat-error>
+      </mat-form-field>
+      <br><br>
+
+      <div class="button-margin">
+      <button mat-stroked-button (click)="openThankYou()">Contact Us</button>
+      </div>
+    </div>
+  </div>
+</div>     
+
+  <body>
+      <div class="background3"></div>
+  </body>
+  

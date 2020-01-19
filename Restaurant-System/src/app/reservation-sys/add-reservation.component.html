@@ -1,0 +1,31 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <h1 mat-dialog-title style="text-align:center;">MAKE A RESERVATION</h1>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Date</mat-label>
+            <input name="Date" #Date="ngModel" [(ngModel)]="service.newReservation.reservationDate" matInput type="date" placeholder="Choose a date">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Time</mat-label>
+            <input name="Time" #Time="ngModel" [(ngModel)]="theTime" matInput type="time" placeholder="Enter Time">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Table Size</mat-label>
+            <input name="TableSize" #TableSize="ngModel" [(ngModel)]="service.newReservation.tableSize" matInput type="number" placeholder="Enter Table Size">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Customer Name</mat-label>
+            <input name="CustName" #CustName="ngModel" [(ngModel)]="service.newReservation.userFirstName" matInput placeholder="Enter Customer Name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Customer Email</mat-label>
+            <input name="Email" #Email="ngModel" [(ngModel)]="service.newReservation.userEmail" matInput type="email" placeholder="Enter Customer Email">
+        </mat-form-field>
+    
+        <button mat-button type="submit">SUBMIT</button><br>
+        <button mat-button (click)="onNoClick()">CANCEL</button><br>
+    </form>

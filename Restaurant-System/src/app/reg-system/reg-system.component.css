@@ -1,0 +1,9 @@
+.register-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+  }
+  
+.register-container > * {
+    width: 20%;
+}

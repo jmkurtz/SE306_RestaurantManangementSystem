@@ -1,0 +1,84 @@
+<app-main-menu></app-main-menu>
+<div>
+  <mat-sidenav-container>
+  
+    <mat-sidenav mode="side" opened class="header2-font">Jacks Menu
+        <mat-action-list>
+          <mat-list-item *ngFor = "let item of items">
+            <button>{{item.name}}</button>
+          </mat-list-item>
+          <mat-list-item>
+            <button scrollTo=#Beef>scroll to Beef</button>
+          </mat-list-item>
+        </mat-action-list>
+    </mat-sidenav>
+
+
+    <mat-sidenav-content class="menu" class ="menu-font">
+
+      <mat-list-item class="menu-header" id="Chicken">Chicken</mat-list-item>
+      <mat-divider></mat-divider>
+
+      <div fxLayout="row wrap">
+        <mat-card class="menu-item" *ngFor="let item of chickenItems">
+          <img mat-card-image [src]="item.imageUrl" alt="Image of Chicken Item">
+            <mat-card-content>
+              <p>
+                {{ item.name }} <br>
+                {{ item.calories }} Calories
+              </p>
+            </mat-card-content>
+            <mat-card-actions align="start">
+              $ {{ item.price }}
+              <button mat-button>Order</button>
+            </mat-card-actions>
+        </mat-card>
+      </div>  
+      <div class="spacer"></div>
+
+      <mat-list-item class="menu-header" id="Beef">Beef</mat-list-item>
+      <mat-divider></mat-divider>
+
+      <div fxLayout="row wrap">
+        <mat-card class="menu-item" *ngFor="let item of beefItems">
+          <img mat-card-image [src]="item.imageUrl" alt="Image of Beef Item">
+            <mat-card-content>
+              <p>
+                {{ item.name }} <br>
+                {{ item.calories }} Calories
+              </p>
+            </mat-card-content>
+            <mat-card-actions align="start">
+              $ {{ item.price }}
+              <button mat-button>Order</button>
+            </mat-card-actions>
+        </mat-card>
+      </div>  
+      <div class="spacer"></div>
+
+      <mat-list-item class="menu-header" id="Pork">Pork</mat-list-item>
+      <mat-divider></mat-divider>
+
+      <div fxLayout="row wrap">
+          <mat-card class="menu-item" *ngFor="let item of porkItems">
+            <img mat-card-image [src]="item.imageUrl" alt="Image of Pork Item">
+              <mat-card-content>
+                <p>
+                  {{ item.name }} <br>
+                  {{ item.calories }} Calories
+                </p>
+              </mat-card-content>
+              <mat-card-actions align="start">
+                $ {{ item.price }}
+                <button mat-button>Order</button>
+              </mat-card-actions>
+          </mat-card>
+        </div>  
+        <div class="spacer"></div>
+
+    </mat-sidenav-content>
+
+
+  </mat-sidenav-container>
+</div>
+

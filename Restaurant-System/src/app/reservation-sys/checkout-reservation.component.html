@@ -1,0 +1,12 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <h1 mat-dialog-title style="text-align:center;">CHECK OUT</h1>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Amount Spent</mat-label>
+        <input name="Spent" #Spent="ngModel" [(ngModel)]="service.newReservation.amountSpent" matInput type="number" placeholder="Add amount spent">
+        <mat-icon matPrefix>attach_money</mat-icon>
+    </mat-form-field>
+
+    <button mat-button type="submit">SUBMIT</button><br>
+    <button mat-button (click)="onNoClick()">CANCEL</button><br>
+</form>

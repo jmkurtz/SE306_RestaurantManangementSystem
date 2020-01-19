@@ -1,0 +1,16 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+  }
+  
+.login-container > * {
+    width: 95%;
+}
+
+.login-box {
+    position: absolute;
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 10%;
+}

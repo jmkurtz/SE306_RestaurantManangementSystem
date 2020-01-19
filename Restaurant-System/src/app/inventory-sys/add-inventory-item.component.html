@@ -1,0 +1,32 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <h1 mat-dialog-title style="text-align:center;">ADD AN INVENTORY ITEM</h1>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Item Name</mat-label>
+        <input name="ItemName" #ItemName="ngModel" [(ngModel)]="service.newInvItem.itemName" matInput placeholder="Enter Item Name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Item Quantity</mat-label>
+      <input name="ItemQuantity" #ItemQuantity="ngModel" [(ngModel)]="service.newInvItem.itemQuantity" matInput placeholder="Enter Current Quantity">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Item Max Quantity</mat-label>
+      <input name="ItemMaxQuantity" #ItemMaxQuantity="ngModel" [(ngModel)]="service.newInvItem.itemMaxQuantity" matInput placeholder="Enter Maximum Quantity">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Item Minimum Quantity</mat-label>
+      <input name="ItemMinQuantity" #UserName="ngModel" [(ngModel)]="service.newInvItem.itemMinQuantity" matInput placeholder="Enter Minimum Quantity">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Item Price</mat-label>
+      <input name="ItemPrice" #ItemPrice="ngModel" [(ngModel)]="service.newInvItem.itemPrice" matInput placeholder="Enter Item Price">
+      <mat-icon matPrefix>attach_money</mat-icon>
+    </mat-form-field><br>
+
+    <button mat-button type="submit">SUBMIT</button><br>
+    <button mat-button (click)="onNoClick()">CANCEL</button><br>
+</form>

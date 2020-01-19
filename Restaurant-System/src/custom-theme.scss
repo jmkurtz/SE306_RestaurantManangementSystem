@@ -1,0 +1,285 @@
+//https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+@include mat-core();
+//Color order: Default, Lighter, Darker
+//https://material.io/design/color/
+//https://material.io/design/color/#tools-for-picking-colors -- Bottom of page
+$restaurant-system-primary: mat-palette($mat-indigo, 700, 500, 900);
+$restaurant-system-accent: mat-palette($mat-light-blue, 200, 100, 500);
+
+$restaurant-system-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$restaurant-system-theme: mat-light-theme($restaurant-system-primary, $restaurant-system-accent, $restaurant-system-warn);
+
+@include angular-material-theme($restaurant-system-theme);
+
+
+// -----------------Font---------------------------
+.header1-font {
+    font-family: sans-serif; // [serif, monospace, cursive, fantasy, caption, icon, menu, message-box, small-caption, status-bar, "string"]
+    line-height: 1.5; // [Normal, number (font-size multiplier), percentage]
+    font-weight: bold; // [Normal, bold, bolder, lighter] [100,200,...,900]
+    font-stretch: normal; // [Normal, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded]
+    font-variant: normal; // [Normal, small-caps, inherit]
+    font-style: normal; //[Normal, italic, oblique, inherit]
+    overflow-wrap: normal;
+    font-size: 45px;
+    color: white;
+}
+.header2-font {
+    font-family: sans-serif; // [serif, monospace, cursive, fantasy, caption, icon, menu, message-box, small-caption, status-bar, "string"]
+    line-height: 1.5; // [Normal, number (font-size multiplier), percentage]
+    font-weight: bold; // [Normal, bold, bolder, lighter] [100,200,...,900]
+    font-stretch: normal; // [Normal, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded]
+    font-variant: normal; // [Normal, small-caps, inherit]
+    font-style: italic; //[Normal, italic, oblique, inherit]
+    overflow-wrap: normal;
+    font-size: 25px;
+    color: black;
+}
+.body-font {
+    font-family: sans-serif; // [serif, monospace, cursive, fantasy, caption, icon, menu, message-box, small-caption, status-bar, "string"]
+    line-height: 1.5; // [Normal, number (font-size multiplier), percentage]
+    font-weight: normal; // [Normal, bold, bolder, lighter] [100,200,...,900]
+    font-stretch: normal; // [Normal, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded]
+    font-variant: normal; // [Normal, small-caps, inherit]
+    font-style: normal; //[Normal, italic, oblique, inherit]
+    overflow-wrap: normal;
+    font-size: 15px;
+}
+.menu-font {
+    font-family: sans-serif; // [serif, monospace, cursive, fantasy, caption, icon, menu, message-box, small-caption, status-bar, "string"]
+    line-height: 1.5; // [Normal, number (font-size multiplier), percentage]
+    font-weight: bold; // [Normal, bold, bolder, lighter] [100,200,...,900]
+    font-stretch: normal; // [Normal, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded]
+    font-variant: normal; // [Normal, small-caps, inherit]
+    font-style: normal; //[Normal, italic, oblique, inherit]
+    overflow-wrap: normal;
+    font-size: 15px;
+}
+.menu-header {
+    font-family: sans-serif; // [serif, monospace, cursive, fantasy, caption, icon, menu, message-box, small-caption, status-bar, "string"]
+    line-height: 1.5; // [Normal, number (font-size multiplier), percentage]
+    font-weight: bold; // [Normal, bold, bolder, lighter] [100,200,...,900]
+    font-stretch: normal; // [Normal, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded]
+    font-variant: normal; // [Normal, small-caps, inherit]
+    font-style: italic; //[Normal, italic, oblique, inherit]
+    overflow-wrap: normal;
+    font-size: 35px;
+}
+
+// -----------------Menu Bar---------------------------
+.main-toolbar{
+    background: linear-gradient(rgba(black,0.01),rgba(white,0.95), rgba(white,0.95));
+    //background: rgba(black,0.15); // transparent also an option
+    min-height: 100px;
+    //min-width: 1200px
+    //position: absolute;
+    //top: 0px;
+}
+
+.white-toolbar{
+    background: white;
+    min-height: 50px;
+    padding: 0 44px;
+}
+.icon-main-toolbar {
+    padding: 0 14px;
+}
+.space-main-toolbar {
+    flex: 1 1 auto;
+    flex-direction: row;
+}
+.toolbar-icon {
+    height: 100px;
+    width: 150px;
+}
+// -----------------Login---------------------------
+.login-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+  }
+.login-container > * {
+    width: 95%;
+}
+.login-box {
+    position: absolute;
+    width: 30%;
+    min-width: 250px;
+    min-height: 350px;
+}
+
+// -----------------------Form Template [Contact, Reservation]----------------------------------
+.form-short-entries > * { // Duo Column Items
+    min-width: 200px;
+    width: 25%;
+    margin-left: 5%;
+}
+.form-long-entries > * { // Single Column Items
+    min-width: 200px;
+    width: 59%;
+    margin-left: 5%;
+}
+textarea { 
+    min-height: 100px;
+    max-height: 200px;
+}
+.button-margin > * {
+    min-width: 200px;
+    margin-left: 10%;
+}
+.form-container {
+    position: absolute;
+    background: transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 275px;
+    width: 75%;
+    height: 98%;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+.form-template {
+    position: absolute;
+    background: rgba(white,0.97);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+    min-height: 750px;
+    height: 1025px;
+    margin-top: 260px;
+}
+// -----------------About---------------------------
+.section1 {
+    height:35%;
+    min-height:350px;
+    width:40%;
+    min-width: 350px;
+    margin-left:2.5%;
+    margin-right:2.5%;
+    margin-top: 2.5%;
+}
+.section1-image {
+    height:35%;
+    min-height:350px;
+    width:40%;
+    min-width: 350px;
+    margin-top: 5%;
+}
+// -----------------Homepage------------------------
+mat-grid-tile {
+    min-width: 350px;
+}
+// -----------------Menu----------------------------
+mat-sidenav {
+    width: 200px;
+    max-width: 200px;
+} //[fixedInViewport]="true" [fixedTopGap]="108"
+.side-menu-nav {
+    position: fixed;
+}
+.menu {
+    min-width: 500px;
+    max-width: 1300px; 
+    min-height:500px;
+    height: 620px;
+    margin: 10px;
+  }
+.spacer {
+    height: 35px;
+}
+.menu-item {
+    min-width:200px;
+    width: 20%;
+    min-height: 250px;
+    height:25%;
+    display:flex;
+    margin-left: 1.5%;
+    margin-top: 1.5%;
+  }
+.space-menu {
+    flex: 1 1 auto;
+    flex-direction: row;
+}
+
+// ------------------Backgrounds--------------------
+.black {
+    background-color: black !important;
+    width:100%;
+    height: 100%;
+}
+.background {
+    background-color: rgba(238, 238, 238, 0.336) !important;
+    background-image: url("assets/img/login-restaurant.jpg");
+    background-blend-mode: color;
+    min-height: 850px;
+    height:1150px;
+    width:auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    }
+.background2 {
+    background-color: rgba(238, 238, 238, 0.089) !important;
+    background-image: url("assets/img/temp7.jpg");
+    background-blend-mode: color;
+    min-height:600px;
+    width:auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    }
+  .background3 {
+    background-color: rgba(238, 238, 238, 0.089) !important;
+    background-image: url("assets/img/temp8.jpg");
+    background-blend-mode: color;
+    min-height: 850px;
+    height:1150px;
+    width:auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+  .homepage-background {
+    background-color: rgba(238, 238, 238, 0.336) !important;
+    background-image: url("assets/img/login-restaurant.jpg");
+    background-blend-mode: color;
+    //min-height: 850px;
+    height:600px;
+    width:auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+  .homepage-background2 {
+    background-color: rgba(238, 238, 238, 0.336) !important;
+    background-image: url("assets/img/temp7.jpg");
+    background-blend-mode: color;
+    //min-height: 850px;
+    height:600px;
+    width:auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+  .homepage-background3 {
+    background-color: rgba(238, 238, 238, 0.336) !important;
+    background-image: url("assets/img/temp8.jpg");
+    background-blend-mode: color;
+    //min-height: 850px;
+    height:600px;
+    width:auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
